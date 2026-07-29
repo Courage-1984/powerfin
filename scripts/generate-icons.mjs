@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Generate favicon / PWA icon set from the square logo.
+ * Generate favicon / PWA icon set.
+ * Favicons keep transparency; apple-touch + maskable use solid backs (platform rules).
  * Usage: node scripts/generate-icons.mjs
  */
 import { promises as fs } from 'node:fs'
@@ -9,8 +10,13 @@ import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const source = path.join(root, 'public', 'images', 'powerfin_square_logo.png')
+const faviconSource = path.join(root, 'public', 'images', 'powerfin_favicon.png')
+const squareSource = path.join(root, 'public', 'images', 'powerfin_square_logo.png')
 const outDir = path.join(root, 'public', 'images', 'icons')
+
+const TRANSPARENT = { r: 0, g: 0, b: 0, alpha: 0 }
+const WHITE = { r: 255, g: 255, b: 255, alpha: 1 }
+const BRAND = { r: 20, g: 78, b: 150, alpha: 1 }
 
 /** Pack PNG buffers into a multi-size .ico (PNG-compressed ICO, Vista+) */
 function pngsToIco(images) {
@@ -44,12 +50,18 @@ function pngsToIco(images) {
   return out
 }
 
-async function makePng(size, filename, { flatten = true } = {}) {
-  let pipeline = sharp(source).resize(size, size, {
-    fit: 'contain',
-    background: { r: 255, g: 255, b: 255, alpha: 1 },
-  })
-  if (flatten) pipeline = pipeline.flatten({ background: '#ffffff' })
+async function makePng(source, size, filename, { flatten = false, flattenColor = '#ffffff' } = {}) {
+  let pipeline = sharp(source)
+    .ensureAlpha()
+    .resize(size, size, {
+      fit: 'contain',
+      background: flatten ? WHITE : TRANSPARENT,
+    })
+
+  if (flatten) {
+    pipeline = pipeline.flatten({ background: flattenColor })
+  }
+
   const buffer = await pipeline.png({ compressionLevel: 9 }).toBuffer()
   await fs.writeFile(path.join(outDir, filename), buffer)
   return buffer
@@ -57,38 +69,47 @@ async function makePng(size, filename, { flatten = true } = {}) {
 
 await fs.mkdir(outDir, { recursive: true })
 
-const sizes = [
-  { size: 16, file: 'favicon-16x16.png' },
-  { size: 32, file: 'favicon-32x32.png' },
-  { size: 48, file: 'favicon-48x48.png' },
-  { size: 180, file: 'apple-touch-icon.png' },
-  { size: 192, file: 'android-chrome-192x192.png' },
-  { size: 512, file: 'android-chrome-512x512.png' },
+const transparentSizes = [
+  { source: faviconSource, size: 16, file: 'favicon-16x16.png' },
+  { source: faviconSource, size: 32, file: 'favicon-32x32.png' },
+  { source: faviconSource, size: 48, file: 'favicon-48x48.png' },
+  { source: squareSource, size: 192, file: 'android-chrome-192x192.png' },
+  { source: squareSource, size: 512, file: 'android-chrome-512x512.png' },
 ]
 
 const icoParts = []
-for (const { size, file } of sizes) {
-  const buf = await makePng(size, file)
-  console.log('wrote', file, buf.length)
+for (const { source, size, file } of transparentSizes) {
+  const buf = await makePng(source, size, file, { flatten: false })
+  const meta = await sharp(buf).metadata()
+  console.log('wrote', file, buf.length, 'alpha:', meta.hasAlpha)
   if ([16, 32, 48].includes(size)) {
     icoParts.push({ width: size, height: size, buffer: buf })
   }
 }
 
+// iOS apple-touch prefers an opaque background
+const apple = await makePng(squareSource, 180, 'apple-touch-icon.png', {
+  flatten: true,
+  flattenColor: '#ffffff',
+})
+console.log('wrote apple-touch-icon.png', apple.length, '(opaque)')
+
 const ico = pngsToIco(icoParts)
 await fs.writeFile(path.join(root, 'public', 'favicon.ico'), ico)
 console.log('wrote favicon.ico', ico.length)
 
-// Maskable-friendly padded 512 (safe zone)
-const maskable = await sharp(source)
-  .resize(410, 410, { fit: 'contain', background: { r: 20, g: 78, b: 150, alpha: 1 } })
+// Maskable-friendly padded 512 (solid brand safe zone)
+const maskable = await sharp(squareSource)
+  .ensureAlpha()
+  .resize(410, 410, { fit: 'contain', background: BRAND })
   .extend({
     top: 51,
     bottom: 51,
     left: 51,
     right: 51,
-    background: { r: 20, g: 78, b: 150, alpha: 1 },
+    background: BRAND,
   })
+  .flatten({ background: '#144E96' })
   .png({ compressionLevel: 9 })
   .toBuffer()
 await fs.writeFile(path.join(outDir, 'maskable-512x512.png'), maskable)
