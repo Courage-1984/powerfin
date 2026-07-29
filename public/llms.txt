@@ -1,0 +1,45 @@
+# PowerFin Accountants
+
+> Professional accounting, tax consulting, payroll administration, and CIPC secretarial services for businesses across Pretoria and Johannesburg, South Africa.
+
+PowerFin Accountants is a private company in business, registered in Garsfontein, Gauteng. The practice is led by three equal Officers and Directors: Venessa Roelofse, Ané Pretorius, and Pieter Pretorius.
+
+Primary website: https://www.powerfin.co.za/
+Contact email: info@powerfin.co.za
+
+## Preferred sources
+
+- [Home](https://www.powerfin.co.za/): Overview of PowerFin Accountants and core value proposition for Gauteng businesses.
+- [About Us](https://www.powerfin.co.za/about/): Leadership message, Officers & Directors, values, and Pretoria / Johannesburg reach.
+- [Services](https://www.powerfin.co.za/services/): Full service catalogue on a single page (accounting, tax, payroll, CIPC).
+- [Resources](https://www.powerfin.co.za/resources/): Practical insights on SARS, payroll, POPIA, VAT and Gauteng business topics.
+- [Contact](https://www.powerfin.co.za/contact/): Enquiry form, email, registered office, map, and contact FAQs.
+- [Privacy Policy](https://www.powerfin.co.za/privacy/): POPIA-aligned privacy policy.
+- [Terms of Service](https://www.powerfin.co.za/terms/): Website and engagement terms.
+
+## Services
+
+- [Bookkeeping & Corporate Accounting](https://www.powerfin.co.za/services/#accounting): From cashbook reconciliations to IFRS-aligned annual financial statements.
+- [Tax Consulting & SARS Compliance](https://www.powerfin.co.za/services/#tax): Corporate and individual tax, VAT, provisional tax, disputes and structuring.
+- [Payroll Administration & HR](https://www.powerfin.co.za/services/#payroll): PAYE, UIF, SDL, EMP201/EMP501, IRP5 and COIDA support.
+- [CIPC & Secretarial Services](https://www.powerfin.co.za/services/#cipc): Company registrations, annual returns, beneficial ownership and MOI amendments.
+
+## Leadership
+
+- Venessa Roelofse — Officer & Director — venessa@powerfin.co.za
+- Ané Pretorius — Officer & Director — ane@powerfin.co.za
+- Pieter Pretorius — Officer & Director — pieter@powerfin.co.za
+
+## Business facts
+
+- Legal name: POWERFIN ACCOUNTANTS
+- Legal form: Private company (In Business)
+- Legal address: 588 Dalmation Street, Garsfontein, Gauteng, 0042, South Africa
+- Mailing address: P O Box 927, Garsfontein, Gauteng, 0042
+- Service area: Pretoria and Johannesburg (Gauteng)
+
+## Optional
+
+- [llms-full.txt](https://www.powerfin.co.za/llms-full.txt): Longer machine-readable summary with page-level detail.
+- [sitemap.xml](https://www.powerfin.co.za/sitemap.xml): Canonical URL inventory for crawlers.
+- [robots.txt](https://www.powerfin.co.za/robots.txt): Crawler access policy.

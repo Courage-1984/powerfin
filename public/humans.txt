@@ -1,0 +1,13 @@
+/* TEAM */
+Company: PowerFin Accountants
+Location: Garsfontein, Pretoria, Gauteng, South Africa
+Site: https://www.powerfin.co.za/
+Contact: info@powerfin.co.za
+
+/* THANKS */
+Standards: sitemap.xml, robots.txt, llms.txt, Open Graph, JSON-LD
+
+/* SITE */
+Last update: 2026-07-30
+Standards: HTML5, CSS3
+Language: en-ZA

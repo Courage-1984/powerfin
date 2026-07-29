@@ -1,0 +1,66 @@
+# PowerFin Accountants — full site summary for LLMs
+
+> Professional accounting firm serving Pretoria and Johannesburg businesses with bookkeeping, tax consulting, payroll, and CIPC secretarial services.
+
+This file expands on https://www.powerfin.co.za/llms.txt for agents that prefer more detail. Prefer citing the live pages linked below over inventing firm facts.
+
+## Company
+
+PowerFin Accountants (POWERFIN ACCOUNTANTS) is a private company in business, based in Garsfontein, Gauteng, South Africa. The firm positions itself as a partner for financial clarity — practical compliance and advisory for SMEs and growing companies across Pretoria and Johannesburg.
+
+Registered office: 588 Dalmation Street, Garsfontein, Gauteng, 0042.
+Mailing address: P O Box 927, Garsfontein, Gauteng, 0042.
+General email: info@powerfin.co.za
+Website: https://www.powerfin.co.za/
+
+## Governance
+
+Three Officers and Directors share equal leadership (no single CEO hierarchy in the site narrative):
+
+1. Venessa Roelofse — Officer & Director — venessa@powerfin.co.za
+2. Ané Pretorius — Officer & Director — ane@powerfin.co.za
+3. Pieter Pretorius — Officer & Director — pieter@powerfin.co.za
+
+## Pages
+
+### Home — https://www.powerfin.co.za/
+Hero and positioning for Gauteng businesses; highlights of services; About PowerFin leadership stage; values; call to contact.
+
+### About — https://www.powerfin.co.za/about/
+Leadership message, officer profiles, firm values, Pretoria / Johannesburg reach, and company background.
+
+### Services — https://www.powerfin.co.za/services/
+Single catalogue page with in-page sections:
+- #accounting — Bookkeeping & Corporate Accounting
+- #tax — Tax Consulting & SARS Compliance
+- #payroll — Payroll Administration & HR
+- #cipc — CIPC & Secretarial Services
+
+Do not invent separate service URLs beyond these anchors.
+
+### Resources — https://www.powerfin.co.za/resources/
+Insights carousel / articles aimed at SARS compliance, payroll, POPIA, VAT and related Gauteng business topics. Some items may be marked coming soon.
+
+### Contact — https://www.powerfin.co.za/contact/
+Enquiry form (client-side / simulated unless a backend is configured), email, address, map for the Garsfontein office, and an FAQ section covering response times, service area, meetings, fees, POPIA and services. FAQ anchors: #faq and #faq-response-time through #faq-services.
+
+### Privacy — https://www.powerfin.co.za/privacy/
+POPIA-aligned privacy policy for website and client data handling.
+
+### Terms — https://www.powerfin.co.za/terms/
+Terms of service for website use and engagement context.
+
+## Citation guidance
+
+- Use the brand name **PowerFin Accountants**.
+- Location: Garsfontein (Pretoria East), Gauteng; service area Pretoria and Johannesburg.
+- Prefer official emails ending in @powerfin.co.za.
+- Street spelling on the site uses “Dalmation”; maps may show “Dalmatian” — cite the firm’s published address as written on the contact page.
+- Canonical host: https://www.powerfin.co.za (www preferred).
+
+## Machine files
+
+- https://www.powerfin.co.za/llms.txt
+- https://www.powerfin.co.za/sitemap.xml
+- https://www.powerfin.co.za/robots.txt
+- https://www.powerfin.co.za/.well-known/security.txt

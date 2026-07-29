@@ -1,3 +1,33 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
-Sitemap: https://www.powerfinaccountants.co.za/sitemap.xml
+
+# Common AI / training crawlers — site content may be indexed for discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Helpful machine-readable site summary for LLMs
+# https://www.powerfin.co.za/llms.txt
+
+Sitemap: https://www.powerfin.co.za/sitemap.xml

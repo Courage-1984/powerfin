@@ -1,0 +1,4 @@
+Contact: mailto:info@powerfin.co.za
+Preferred-Languages: en
+Canonical: https://www.powerfin.co.za/.well-known/security.txt
+Expires: 2027-07-30T00:00:00.000Z

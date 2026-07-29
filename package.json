@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs"
   },
   "devDependencies": {
+    "sharp": "^0.35.3",
+    "svgo": "^4.0.2",
     "vite": "^6.0.3"
   }
 }
